@@ -1,4 +1,5 @@
-import { Patient, RiskAssessment } from "@/types/patient";
+import type { Patient } from "@/types/patient";
+import type { RiskAssessment } from "./api/types";
 
 export function calculateRiskAssessment(patient: Patient): RiskAssessment {
   const bpRisk = calculateBPRisk(patient.blood_pressure);
@@ -6,7 +7,7 @@ export function calculateRiskAssessment(patient: Patient): RiskAssessment {
   const ageRisk = calculateAgeRisk(patient.age);
   const invalid = bpRisk === -1 || tempRisk === -1 || ageRisk === -1;
   const totalRisk =
-    Math.min(bpRisk, 0) + Math.min(tempRisk, 0) + Math.min(ageRisk, 0);
+    Math.max(bpRisk, 0) + Math.max(tempRisk, 0) + Math.max(ageRisk, 0);
   const hasFever = tempRisk >= 1;
   return {
     patient_id: patient.patient_id,
@@ -24,7 +25,9 @@ function calculateBPRisk(bp: string | null | undefined): number {
     return -1;
   }
 
-  const [systolic, diastolic] = bp.split("/").map(Number);
+  const [systolic, diastolic] = bp
+    .split("/")
+    .map((val) => (val === "" ? NaN : Number(val)));
 
   if (isNaN(systolic) || isNaN(diastolic)) {
     return -1;

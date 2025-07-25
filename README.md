@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ksense Healthcare Risk Assessment System
 
-## Getting Started
+A patient risk scoring platform built for the Ksense Healthcare API Assessment. This application demonstrates API integration, data processing, and full-stack development skills using modern TypeScript and Next.js.
 
-First, run the development server:
+## 🚀 Live Demo
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+<!-- **[View Live Application →](https://example.com)** -->
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📋 Assessment Overview
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This project implements a patient risk scoring system that:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Fetches patient data from a healthcare API with retry logic and error handling
+- Calculates risk scores based on blood pressure, temperature, and age
+- Identifies high-risk patients, fever cases, and data quality issues
+- Provides an intuitive dashboard for clinical decision making
 
-## Learn More
+## 🏗️ Technical Architecture
 
-To learn more about Next.js, take a look at the following resources:
+### Frontend
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Next.js 15** with App Router and React Server Components
+- **TypeScript** for type safety and developer experience
+- **Tailwind CSS** + **shadcn/ui** for professional styling
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Backend Integration
 
-## Deploy on Vercel
+- **Custom API client** with exponential backoff retry logic
+- **Rate limiting handling** (429 responses)
+- **Error recovery** for intermittent 500/503 failures
+- **Data validation** with graceful fallbacks
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Key Features
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- ✅ **Robust error handling** - Handles API inconsistencies gracefully
+- ✅ **Real-time progress tracking** - Visual feedback during data fetching
+- ✅ **Advanced filtering & sorting** - Search patients, filter by risk level
+- ✅ **Risk visualization** - Color-coded badges and alert systems
+
+## 🏆 Assessment Results
+
+Successfully implemented all required features:
+
+- ✅ API integration with retry logic
+- ✅ Risk calculation algorithm
+- ✅ High-risk patient identification
+- ✅ Fever patient detection
+- ✅ Data quality issue flagging
+- ✅ Professional UI/UX design
+
+**Perfect Score Achieved: 100/100 on First Attempt**
+
+![Assessment Results](./screenshots/assessment_result.png)
