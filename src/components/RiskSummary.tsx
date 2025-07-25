@@ -1,7 +1,6 @@
 import { Patient } from "@/types/patient";
 import { RiskAssessment } from "@/lib/api/types";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { AlertTriangle, Thermometer, Users, AlertCircle } from "lucide-react";
 
 interface RiskSummaryProps {

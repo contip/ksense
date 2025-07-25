@@ -126,9 +126,6 @@ export default function AlertLists({
               </p>
             ) : (
               dataQualityIssues.map((risk) => {
-                const patient = patients.find(
-                  (p) => p.patient_id === risk.patient_id
-                );
                 const issues = [];
                 if (risk.bpRisk === -1) issues.push("BP");
                 if (risk.tempRisk === -1) issues.push("Temp");

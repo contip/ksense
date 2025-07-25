@@ -76,7 +76,7 @@ export default function PatientTable({
   }, [patients, riskAssessments]);
 
   const filteredAndSortedData = useMemo(() => {
-    let filtered = combinedData.filter((item) => {
+    const filtered = combinedData.filter((item) => {
       const matchesSearch =
         item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
         item.patient_id.toLowerCase().includes(searchTerm.toLowerCase());
@@ -94,7 +94,7 @@ export default function PatientTable({
 
     // Sort the data
     filtered.sort((a, b) => {
-      let aValue: any, bValue: any;
+      let aValue: string | number, bValue: string | number;
 
       switch (sortField) {
         case "name":

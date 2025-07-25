@@ -22,7 +22,7 @@ export class ApiClient {
     url: string,
     options: RequestInit = {},
     maxRetries: number = 3,
-    validateData?: (data: any) => boolean
+    validateData?: (data: T) => boolean
   ): Promise<T> {
     const headers = {
       "Content-Type": "application/json",
@@ -84,7 +84,7 @@ export class ApiClient {
 
     while (page <= totalPages) {
       /* custom validation for patient data */
-      const validatePatientData = (data: any): boolean => {
+      const validatePatientData = (data: ApiResponse): boolean => {
         return (
           data &&
           data.data &&
