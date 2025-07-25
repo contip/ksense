@@ -4,7 +4,7 @@ A patient risk scoring platform built for the Ksense Healthcare API Assessment. 
 
 ## 🚀 Live Demo
 
-<!-- **[View Live Application →](https://example.com)** -->
+**[View Live Application →](https://ksense.vercel.app)**
 
 ## 📋 Assessment Overview
 
